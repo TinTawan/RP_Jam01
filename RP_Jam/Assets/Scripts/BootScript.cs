@@ -12,6 +12,17 @@ public class BootScript : MonoBehaviour
     bool isStomping, isRising;
 
     float stompTimer = 0.5f, riseTimer = 0.5f;
+    [SerializeField] float stompTime = 0.5f;
+
+    BoxCollider2D bootCol;
+
+
+    private void Start()
+    {
+        bootCol = GetComponent<BoxCollider2D>();
+
+        stompTimer = stompTime;
+    }
 
     private void Update()
     {
@@ -26,6 +37,7 @@ public class BootScript : MonoBehaviour
         if(isStomping)
         {
             Stomp();
+            
         }
         if (isRising)
         {
@@ -43,16 +55,19 @@ public class BootScript : MonoBehaviour
         {
             isRising = true;
             Rise();
-            stompTimer = 0.5f;
+            stompTimer = stompTime;
         }
 
+        bootCol.enabled = true;
     }
 
     void Rise()
     {
         //Debug.Log("Rise");
-        transform.position = Vector2.Lerp(transform.position, startPos, (dropTime * Time.deltaTime)/2);
+        transform.position = Vector2.Lerp(transform.position, startPos, (dropTime * Time.deltaTime)/2f);
         isStomping = false;
+
+        bootCol.enabled = false;
 
         riseTimer -= Time.deltaTime;
         if (riseTimer <= 0)
@@ -60,6 +75,7 @@ public class BootScript : MonoBehaviour
             isRising = false;
             riseTimer = 0.5f;
         }
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -73,9 +89,6 @@ public class BootScript : MonoBehaviour
 
     }
 
-    /*private void OnCollisionEnter2D(Collision2D other)
-    {
-        Debug.Log("Stomp Enemy");
-    }*/
+    
 
 }

@@ -8,12 +8,16 @@ public class Enemy : MonoBehaviour
     [SerializeField] float moveSpeed = 2f;
     [SerializeField] Transform moveTarget;
 
+
+
     Vector2 moveVect;
 
     // Start is called before the first frame update
     void Start()
     {
         moveVect = new(-moveSpeed, 0);
+
+        transform.position = new(12, -4);
     }
 
     // Update is called once per frame
