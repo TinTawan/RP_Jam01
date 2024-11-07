@@ -82,7 +82,7 @@ public class BootScript : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            Debug.Log("Stomp Enemy");
+            //Debug.Log("Stomp Enemy");
 
             Destroy(other.gameObject);
         }
