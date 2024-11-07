@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] float moveSpeed = 2f;
     [SerializeField] Transform moveTarget;
 
-    float ideologyLevel = 0;
+    float ideologyVal;
 
     bool isGood;
 
@@ -20,10 +20,12 @@ public class Enemy : MonoBehaviour
         if(Random.Range(0,2) == 0)
         {
             isGood = true;
+            ideologyVal = 5;
         }
         else
         {
             isGood = false;
+            ideologyVal = -5;
         }
 
     }
@@ -43,18 +45,18 @@ public class Enemy : MonoBehaviour
 
     public void ReachedTarget()
     {
-        Debug.Log("Reached Target");
+        //Debug.Log("Reached Target");
         Destroy(gameObject, 0.1f);
     }
 
     public void Stomped()
     {
-        Debug.Log("Stomped");
+        //Debug.Log("Stomped");
         Destroy(gameObject/*, 0.1f*/);
     }
 
-    float GetIdeologyLevel()
+    public float GetIdeologyLevel()
     {
-        return ideologyLevel;
+        return ideologyVal;
     }
 }

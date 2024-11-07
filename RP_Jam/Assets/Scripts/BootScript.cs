@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BootScript : MonoBehaviour
 {
+    [Header("Boot Movement")]
     [SerializeField] float dropTime = 2f;
 
     [SerializeField] Vector2 dropPos;
@@ -16,6 +17,9 @@ public class BootScript : MonoBehaviour
 
     BoxCollider2D bootCol;
 
+
+    [Header("Player Info")]
+    [SerializeField] float ideologyLevel = 0;
 
     private void Start()
     {
@@ -84,12 +88,19 @@ public class BootScript : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            other.GetComponent<Enemy>().Stomped();
+            Enemy enemy = other.GetComponent<Enemy>();
+            ideologyLevel += enemy.GetIdeologyLevel();
+            enemy.Stomped();
 
+            Debug.Log(ideologyLevel);
         }
 
     }
 
+    public float GetIdeologyVal()
+    {
+        return ideologyLevel;
+    }
     
 
 }

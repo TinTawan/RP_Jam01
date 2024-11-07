@@ -1,20 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class UI_Manager : MonoBehaviour
 {
+    [SerializeField] BootScript player;
     [SerializeField] GameObject arrow;
+    [SerializeField] TextMeshProUGUI ideologyValText;
 
-    // Start is called before the first frame update
+    [SerializeField][Range(-90 ,90)] float arrowPointAngle = 0;
+    Vector3 arrowPoint;
+
+
     void Start()
-    {
-        arrow.transform.eulerAngles = Vector2.right;
-    }
-
-    // Update is called once per frame
-    void Update()
     {
         
     }
+
+
+    void Update()
+    {
+        RotateArrow(arrowPointAngle);
+        ideologyValText.text = player.GetIdeologyVal().ToString();
+    }
+
+    void RotateArrow(float angle)
+    {
+        arrowPoint = new(0, 0, -angle);
+
+        arrow.transform.eulerAngles = arrowPoint;
+    }
+
+
 }
