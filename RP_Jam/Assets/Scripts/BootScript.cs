@@ -62,19 +62,20 @@ public class BootScript : MonoBehaviour
         }
     }
 
-    /*private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Enemy"))
         {
             Debug.Log("Stomp Enemy");
+
+            Destroy(other.gameObject);
         }
 
-        Debug.Log("Stomp");
-    }*/
+    }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    /*private void OnCollisionEnter2D(Collision2D other)
     {
         Debug.Log("Stomp Enemy");
-    }
+    }*/
 
 }
