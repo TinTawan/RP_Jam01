@@ -9,9 +9,9 @@ public class BootScript : MonoBehaviour
     [SerializeField] Vector2 dropPos;
     Vector2 startPos = new(-5, 0);
 
-    [SerializeField] bool isStomping, isRising;
+    bool isStomping, isRising;
 
-    [SerializeField] float stompTimer = 0.5f, riseTimer = 0.5f;
+    float stompTimer = 0.5f, riseTimer = 0.5f;
 
     private void Update()
     {
@@ -62,12 +62,19 @@ public class BootScript : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    /*private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Enemy"))
         {
             Debug.Log("Stomp Enemy");
         }
+
+        Debug.Log("Stomp");
+    }*/
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        Debug.Log("Stomp Enemy");
     }
 
 }

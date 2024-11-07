@@ -367,10 +367,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dropTime: 20
   dropPos: {x: -5, y: -2.5}
-  isStomping: 0
-  isRising: 0
-  stompTimer: 0.5
-  riseTimer: 0.5
 --- !u!61 &1505818612
 BoxCollider2D:
   m_ObjectHideFlags: 0
