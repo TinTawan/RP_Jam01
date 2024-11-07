@@ -449,7 +449,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 8818715329994199893, guid: 8143bae7d9effc64c8df6b5cc6a9830f, type: 3}
-  spawnInterval: 1.5
+  spawnIntervalMin: 0.7
+  spawnIntervalMax: 1.8
 --- !u!4 &2067870170
 Transform:
   m_ObjectHideFlags: 0

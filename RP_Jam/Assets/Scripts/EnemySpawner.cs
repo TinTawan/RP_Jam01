@@ -6,7 +6,8 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] GameObject enemyPrefab;
 
-    [SerializeField] float spawnInterval = 2f;
+    [SerializeField] float spawnIntervalMin = 2f, spawnIntervalMax = 3f;
+    float spawnInterval;
     float timer = 0;
 
 
@@ -19,15 +20,21 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        SpawnEnemy();
+    }
+
+    void SpawnEnemy()
+    {
         timer += Time.deltaTime;
-        if(timer >= spawnInterval)
+        if (timer >= spawnInterval)
         {
-            Debug.Log("Spawn Enemy");
+            spawnInterval = Random.Range(spawnIntervalMin, spawnIntervalMax);
 
             Instantiate(enemyPrefab, transform.position, Quaternion.identity);
 
             timer = 0;
         }
+
     }
 
 }
