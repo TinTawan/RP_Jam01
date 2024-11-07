@@ -6,29 +6,60 @@ public class BootScript : MonoBehaviour
 {
     [SerializeField] float dropTime = 2f;
 
-    /*[SerializeField] */Vector2 dropPos;
+    [SerializeField] Vector2 dropPos;
+    Vector2 startPos = new(-5, 0);
+
+    [SerializeField] bool isStomping, isRising;
+
+    [SerializeField] float stompTimer = 0.5f, riseTimer = 0.5f;
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) && !isStomping && !isRising)
         {
-            //DropBoot();
+            Debug.Log("Stomp ");
+            isStomping = true;
 
-            StartCoroutine(Stomp());
+            
+        }
+
+        if(isStomping)
+        {
+            Stomp();
+        }
+        if (isRising)
+        {
+            Rise();
         }
     }
 
-    void DropBoot()
+
+    void Stomp()
     {
-        dropPos = new(transform.position.x, transform.position.y - 2.5f);
-        transform.position = Vector3.Lerp(transform.position, dropPos, dropTime * Time.deltaTime);
+        transform.position = Vector2.Lerp(transform.position, dropPos, dropTime * Time.deltaTime);
+
+        stompTimer -= Time.deltaTime;
+        if(stompTimer <= 0)
+        {
+            isRising = true;
+            Rise();
+            stompTimer = 0.5f;
+        }
+
     }
 
-    IEnumerator Stomp()
+    void Rise()
     {
-        transform.position = Vector3.Lerp(transform.position, dropPos, dropTime * Time.deltaTime);
+        Debug.Log("Rise");
+        transform.position = Vector2.Lerp(transform.position, startPos, (dropTime * Time.deltaTime)/2);
+        isStomping = false;
 
-
-        yield return new WaitForSeconds(dropTime);
+        riseTimer -= Time.deltaTime;
+        if (riseTimer <= 0)
+        {
+            isRising = false;
+            riseTimer = 0.5f;
+        }
     }
+
 }
