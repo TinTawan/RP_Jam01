@@ -8,6 +8,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] float moveSpeed = 2f;
     [SerializeField] Transform moveTarget;
 
+    [SerializeField] Sprite goodSprite, badSprite;
+    SpriteRenderer sr;
+
     float ideologyVal;
 
     bool isGood;
@@ -15,17 +18,20 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
+        sr = GetComponent<SpriteRenderer>();
         moveTarget = GameObject.FindGameObjectWithTag("EnemyTarget").transform;
 
         if(Random.Range(0,2) == 0)
         {
             isGood = true;
-            ideologyVal = 5;
+            sr.sprite = goodSprite;
+            ideologyVal = -10;
         }
         else
         {
             isGood = false;
-            ideologyVal = -5;
+            sr.sprite = badSprite;
+            ideologyVal = 10;
         }
 
     }
