@@ -8,24 +8,53 @@ public class Enemy : MonoBehaviour
     [SerializeField] float moveSpeed = 2f;
     [SerializeField] Transform moveTarget;
 
+    float ideologyLevel = 0;
 
-    // Start is called before the first frame update
+    bool isGood;
+
+
     void Start()
     {
-
-        //transform.position = new(12, -4);
-
         moveTarget = GameObject.FindGameObjectWithTag("EnemyTarget").transform;
+
+        if(Random.Range(0,2) == 0)
+        {
+            isGood = true;
+        }
+        else
+        {
+            isGood = false;
+        }
+
     }
 
-    // Update is called once per frame
     void Update()
     {
         Move();
+
+        
     }
 
     void Move()
     {
+        //move enemy to the left of the screen as soon as they spawn
         transform.position = Vector2.MoveTowards(transform.position, moveTarget.position, moveSpeed * Time.deltaTime);
+    }
+
+    public void ReachedTarget()
+    {
+        Debug.Log("Reached Target");
+        Destroy(gameObject, 0.1f);
+    }
+
+    public void Stomped()
+    {
+        Debug.Log("Stomped");
+        Destroy(gameObject/*, 0.1f*/);
+    }
+
+    float GetIdeologyLevel()
+    {
+        return ideologyLevel;
     }
 }

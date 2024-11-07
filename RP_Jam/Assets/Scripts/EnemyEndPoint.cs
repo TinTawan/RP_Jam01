@@ -28,8 +28,7 @@ public class EnemyEndPoint : MonoBehaviour
 
     void EnemyEnters(Collider2D col)
     {
-        Debug.Log("Reached Target");
-        Destroy(col.gameObject, 0.1f);
+        col.GetComponent<Enemy>().ReachedTarget();
 
     }
 }

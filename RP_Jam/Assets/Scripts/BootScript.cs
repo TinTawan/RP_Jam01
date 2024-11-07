@@ -7,7 +7,7 @@ public class BootScript : MonoBehaviour
     [SerializeField] float dropTime = 2f;
 
     [SerializeField] Vector2 dropPos;
-    Vector2 startPos = new(-5, 0.2f);
+    Vector2 startPos;
 
     bool isStomping, isRising;
 
@@ -22,6 +22,8 @@ public class BootScript : MonoBehaviour
         bootCol = GetComponent<BoxCollider2D>();
 
         stompTimer = stompTime;
+
+        startPos = transform.position;
     }
 
     private void Update()
@@ -82,9 +84,8 @@ public class BootScript : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            //Debug.Log("Stomp Enemy");
+            other.GetComponent<Enemy>().Stomped();
 
-            Destroy(other.gameObject);
         }
 
     }
