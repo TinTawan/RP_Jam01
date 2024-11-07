@@ -9,7 +9,7 @@ public class UI_Manager : MonoBehaviour
     [SerializeField] GameObject arrow;
     [SerializeField] TextMeshProUGUI ideologyValText;
 
-    [SerializeField][Range(-90 ,90)] float arrowPointAngle = 0;
+    [SerializeField][Range(-100 ,100)] float arrowPointAngle = 0;
     Vector3 arrowPoint;
 
 
@@ -21,7 +21,6 @@ public class UI_Manager : MonoBehaviour
 
     void Update()
     {
-        //RotateArrow(arrowPointAngle);
         RotateArrow(player.GetIdeologyVal());
         ideologyValText.text = player.GetIdeologyVal().ToString();
     }

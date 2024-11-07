@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyEndPoint : MonoBehaviour
 {
-    
+    [SerializeField] BootScript player;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +28,8 @@ public class EnemyEndPoint : MonoBehaviour
 
     void EnemyEnters(Collider2D col)
     {
-        col.GetComponent<Enemy>().ReachedTarget();
-
+        Enemy enemy = col.GetComponent<Enemy>();
+        enemy.ReachedTarget();
+        player.AddIdeologyVal(-enemy.GetIdeologyLevel()*2);
     }
 }

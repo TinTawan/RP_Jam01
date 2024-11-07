@@ -34,7 +34,6 @@ public class BootScript : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space) && !isStomping && !isRising)
         {
-            //Debug.Log("Stomp ");
             isStomping = true;
 
             
@@ -48,6 +47,16 @@ public class BootScript : MonoBehaviour
         if (isRising)
         {
             Rise();
+        }
+
+        ideologyLevel = Mathf.Clamp(ideologyLevel, -100, 100);
+        if(ideologyLevel <= -100)
+        {
+            Debug.Log("Lose");
+        }
+        if(ideologyLevel >= 100)
+        {
+            Debug.Log("Win");
         }
     }
 
@@ -69,7 +78,6 @@ public class BootScript : MonoBehaviour
 
     void Rise()
     {
-        //Debug.Log("Rise");
         transform.position = Vector2.Lerp(transform.position, startPos, (dropTime * Time.deltaTime)/2f);
         isStomping = false;
 
@@ -100,6 +108,11 @@ public class BootScript : MonoBehaviour
     public float GetIdeologyVal()
     {
         return ideologyLevel;
+    }
+
+    public void AddIdeologyVal(float val)
+    {
+        ideologyLevel += val;
     }
     
 
