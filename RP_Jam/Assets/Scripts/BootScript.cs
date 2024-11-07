@@ -17,7 +17,7 @@ public class BootScript : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space) && !isStomping && !isRising)
         {
-            Debug.Log("Stomp ");
+            //Debug.Log("Stomp ");
             isStomping = true;
 
             
@@ -50,7 +50,7 @@ public class BootScript : MonoBehaviour
 
     void Rise()
     {
-        Debug.Log("Rise");
+        //Debug.Log("Rise");
         transform.position = Vector2.Lerp(transform.position, startPos, (dropTime * Time.deltaTime)/2);
         isStomping = false;
 
@@ -59,6 +59,14 @@ public class BootScript : MonoBehaviour
         {
             isRising = false;
             riseTimer = 0.5f;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            Debug.Log("Stomp Enemy");
         }
     }
 
