@@ -49,7 +49,7 @@ public class BootScript : MonoBehaviour
             Rise();
         }
 
-        ideologyLevel = Mathf.Clamp(ideologyLevel, -100, 100);
+        //ideologyLevel = Mathf.Clamp(ideologyLevel, -100, 100);
         if(ideologyLevel <= -100)
         {
             Debug.Log("Lose");

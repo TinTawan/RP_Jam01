@@ -15,6 +15,10 @@ public class Enemy : MonoBehaviour
 
     bool isGood;
 
+    [SerializeField] List<string> goodSentences = new List<string>();
+    [SerializeField] List<string> badSentences = new List<string>();
+
+    string stringToSay;
 
     void Start()
     {
@@ -34,6 +38,8 @@ public class Enemy : MonoBehaviour
             ideologyVal = 10;
         }
 
+        Debug.Log(stringToSay);
+
     }
 
     void Update()
@@ -51,18 +57,29 @@ public class Enemy : MonoBehaviour
 
     public void ReachedTarget()
     {
-        //Debug.Log("Reached Target");
         Destroy(gameObject, 0.1f);
     }
 
     public void Stomped()
     {
-        //Debug.Log("Stomped");
         Destroy(gameObject/*, 0.1f*/);
     }
 
     public float GetIdeologyLevel()
     {
         return ideologyVal;
+    }
+
+    void SetSentence(bool isGood)
+    {
+        int rand = Random.Range(0, goodSentences.Count);
+        if(isGood )
+        {
+            stringToSay = goodSentences[rand];
+        }
+        else
+        {
+            stringToSay = badSentences[rand];
+        }
     }
 }
