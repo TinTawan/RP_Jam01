@@ -7,7 +7,7 @@ public class BootScript : MonoBehaviour
     [SerializeField] float dropTime = 2f;
 
     [SerializeField] Vector2 dropPos;
-    Vector2 startPos = new(-5, 0);
+    Vector2 startPos = new(-5, 0.2f);
 
     bool isStomping, isRising;
 
