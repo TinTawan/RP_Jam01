@@ -23,6 +23,9 @@ public class EnemySpawner : MonoBehaviour
         if(timer >= spawnInterval)
         {
             Debug.Log("Spawn Enemy");
+
+            Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+
             timer = 0;
         }
     }
