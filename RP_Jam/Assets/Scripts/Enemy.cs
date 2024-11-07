@@ -38,7 +38,7 @@ public class Enemy : MonoBehaviour
             ideologyVal = 10;
         }
 
-        Debug.Log(stringToSay);
+        SetSentence(isGood);
 
     }
 
@@ -81,5 +81,7 @@ public class Enemy : MonoBehaviour
         {
             stringToSay = badSentences[rand];
         }
+
+        Debug.Log(stringToSay);
     }
 }
