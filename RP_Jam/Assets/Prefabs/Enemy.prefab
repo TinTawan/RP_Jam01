@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da82ff3df906f304990c8584301a62a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 3.5
   moveTarget: {fileID: 0}
   goodSprite: {fileID: 196451152, guid: 6faa4887a7183a54b94756563eb06087, type: 3}
   badSprite: {fileID: 1370064758, guid: ca84d15b2f915d14184954215985dea8, type: 3}
@@ -175,6 +175,14 @@ MonoBehaviour:
   - 'Public transit is better for the environment. '
   - Immigration boosts our workforce.
   - Immigration adds value to society.
+  - Equal pay for women
+  - Remove the gender wage gap
+  - Free education for all
+  - Cheaper tuition fees
+  - Raise the minimum wage
+  - Increase taxes for the higher earners to fund our economy
+  - Basic utilities should be in public hands, not forein companies!
+  - Privatisation of basic services has been a disaster for our economy.
   badSentences:
   - Private healthcare is better, Cut public spending.
   - Public transit is outdated.
@@ -190,6 +198,7 @@ MonoBehaviour:
   - ALL immigrants are dangerous.
   - A person's situation does not contribute to crime, it is a choice.
   - ALL poor people are lazy.
+  - Taxing the rich will ruin our economy.
   good: {fileID: 8300000, guid: 8f9558959da5a71478121b6fe50c0e76, type: 3}
   bad: {fileID: 8300000, guid: 6d0e9dfd830294747945a17966507c35, type: 3}
   bloodEffect: {fileID: 6521760070431722716, guid: 932bcdce96dfcaa4c962b265e9d9c92d, type: 3}
