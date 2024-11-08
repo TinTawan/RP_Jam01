@@ -21,7 +21,17 @@ public class EnemyAnimator : MonoBehaviour
         {
             anim.SetFloat("goodVal", 0);
         }
+
+        
     }
+
+    /*private void Update()
+    {
+        if (enemy.GetIsDead())
+        {
+            anim.SetBool("squished", true);
+        }
+    }*/
 
 
 }

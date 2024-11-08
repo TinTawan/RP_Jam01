@@ -780,8 +780,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36ab48a8b4a7dc7428a223384e36c86f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeVal: 0.2
-  shakeTimer: 0.1
 --- !u!1 &618071210
 GameObject:
   m_ObjectHideFlags: 0
@@ -1364,7 +1362,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: cc2b302b23dcac94faccfa4cd7793efb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1

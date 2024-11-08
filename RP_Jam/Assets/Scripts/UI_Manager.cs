@@ -104,4 +104,7 @@ public class UI_Manager : MonoBehaviour
 
         return ui1 + (val - world1)*(ui2 - ui1)/(world2 - world1);
     }
+
+
+
 }

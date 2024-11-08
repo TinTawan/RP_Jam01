@@ -24,6 +24,8 @@ public class Enemy : MonoBehaviour
     AudioSource audioSource;
     [SerializeField] AudioClip good, bad;
 
+    bool isDead;
+
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
@@ -88,7 +90,8 @@ public class Enemy : MonoBehaviour
 
     public void Stomped()
     {
-        Destroy(gameObject/*, 0.1f*/);
+        isDead = true;
+        Destroy(gameObject, 1.5f);
     }
 
     public float GetIdeologyLevel()
@@ -105,5 +108,10 @@ public class Enemy : MonoBehaviour
     public bool GetGood()
     {
         return isGood;
+    }
+
+    public bool GetIsDead()
+    {
+        return isDead;
     }
 }

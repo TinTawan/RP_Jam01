@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BootScript : MonoBehaviour
 {
@@ -29,6 +28,7 @@ public class BootScript : MonoBehaviour
     [SerializeField] AudioSource squash;
     [SerializeField] CamShake cam;
 
+    bool win, lose;
 
     private void Start()
     {
@@ -41,30 +41,36 @@ public class BootScript : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && !isStomping && !isRising)
+        if (Input.GetKeyDown(KeyCode.Space) && !isStomping && !isRising)
         {
             isStomping = true;
-            
+
 
         }
 
-        if(isStomping)
+        if (isStomping)
         {
             Stomp();
-            
+
         }
         if (isRising)
         {
             Rise();
         }
 
-        if(ideologyLevel <= -100)
+        if (ideologyLevel <= -100)
         {
             Debug.Log("Lose");
+            lose = true;
+
+            SceneManager.LoadScene(2);
         }
-        if(ideologyLevel >= 100)
+        if (ideologyLevel >= 100)
         {
             Debug.Log("Win");
+            win = true;
+
+            SceneManager.LoadScene(3);
         }
     }
 
@@ -74,7 +80,7 @@ public class BootScript : MonoBehaviour
         transform.position = Vector2.Lerp(transform.position, dropPos, dropTime * Time.deltaTime);
 
         stompTimer -= Time.deltaTime;
-        if(stompTimer <= 0)
+        if (stompTimer <= 0)
         {
             isRising = true;
             Rise();
@@ -88,7 +94,7 @@ public class BootScript : MonoBehaviour
 
     void Rise()
     {
-        transform.position = Vector2.Lerp(transform.position, startPos, (dropTime * Time.deltaTime)/2f);
+        transform.position = Vector2.Lerp(transform.position, startPos, (dropTime * Time.deltaTime) / 2f);
         isStomping = false;
 
         bootCol.enabled = false;
@@ -116,7 +122,7 @@ public class BootScript : MonoBehaviour
 
             squash.Play();
 
-            
+
         }
 
     }
@@ -130,6 +136,15 @@ public class BootScript : MonoBehaviour
     {
         ideologyLevel += val;
     }
-    
+
+
+    public bool GetOutcome(bool hasWon)
+    {
+        if (hasWon)
+        {
+            return true;
+        }
+        return false;
+    }
 
 }
