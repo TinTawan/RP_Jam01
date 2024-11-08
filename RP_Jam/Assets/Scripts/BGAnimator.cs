@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpriteAnimator : MonoBehaviour
+public class BGAnimator : MonoBehaviour
 {
     SpriteRenderer sr;
     Animator anim;

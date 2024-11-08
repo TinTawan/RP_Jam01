@@ -30,7 +30,7 @@ public class Enemy : MonoBehaviour
 
         if (Random.Range(0, 2) == 0)
         {
-            //isGood = true;
+            isGood = true;
             sr.sprite = goodSprite;
             ideologyVal = -value;
 
@@ -40,7 +40,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            //isGood = false;
+            isGood = false;
             sr.sprite = badSprite;
             ideologyVal = value;
 
@@ -99,5 +99,10 @@ public class Enemy : MonoBehaviour
     public string GetSentence()
     {
         return stringToSay;
+    }
+
+    public bool GetGood()
+    {
+        return isGood;
     }
 }

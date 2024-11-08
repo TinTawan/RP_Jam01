@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 2446021360990705871}
   - component: {fileID: 2897314580016900421}
   - component: {fileID: 4120770049962923341}
+  - component: {fileID: 436067787017172525}
+  - component: {fileID: 7571782445268043295}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -187,3 +189,36 @@ MonoBehaviour:
   - ALL immigrants are dangerous.
   - A person's situation does not contribute to crime, it is a choice.
   - ALL poor people are lazy.
+--- !u!95 &436067787017172525
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8818715329994199893}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1ae962a8b792bd948a0ec73fe88201f9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7571782445268043295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8818715329994199893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd0f44db7c24fd4ea62c90343611403, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
