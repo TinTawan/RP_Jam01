@@ -26,6 +26,8 @@ public class Enemy : MonoBehaviour
 
     bool isDead;
 
+    [SerializeField] GameObject bloodEffect;
+
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
@@ -91,7 +93,9 @@ public class Enemy : MonoBehaviour
     public void Stomped()
     {
         isDead = true;
-        Destroy(gameObject, 1.5f);
+        Instantiate(bloodEffect, transform.position, Quaternion.identity);
+
+        Destroy(gameObject, 0.01f);
     }
 
     public float GetIdeologyLevel()

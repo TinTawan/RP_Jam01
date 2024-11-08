@@ -192,6 +192,7 @@ MonoBehaviour:
   - ALL poor people are lazy.
   good: {fileID: 8300000, guid: 8f9558959da5a71478121b6fe50c0e76, type: 3}
   bad: {fileID: 8300000, guid: 6d0e9dfd830294747945a17966507c35, type: 3}
+  bloodEffect: {fileID: 6521760070431722716, guid: 932bcdce96dfcaa4c962b265e9d9c92d, type: 3}
 --- !u!95 &436067787017172525
 Animator:
   serializedVersion: 5
