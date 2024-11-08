@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class UI_Manager : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class UI_Manager : MonoBehaviour
 
     [SerializeField] GameObject scrollPanelParent, speechBubblePrefab;
     [SerializeField] List<Enemy> enemies = new List<Enemy>();
+    [SerializeField] List<GameObject> speechBubbles = new List<GameObject>();
 
     
 
@@ -57,25 +59,41 @@ public class UI_Manager : MonoBehaviour
 
         TextMeshProUGUI text = item.GetComponentInChildren<TextMeshProUGUI>();
         text.text = speech;
+
+        speechBubbles.Add(item);
         
+    }
+
+    void RemoveSpeechBubble(GameObject obejct)
+    {
+
     }
 
 
     public void AddEnemyToList(Enemy enemy, string sentence)
     {
         enemies.Add(enemy);
-        //Debug.Log(sentence);
+        
         SpawnSpeechBubble(sentence);
         
     }
 
     public void PopEnemyFromList()
     {
+        Destroy(speechBubbles[0], 0.1f);
+        speechBubbles.RemoveAt(0);
+
+
         enemies.RemoveAt(0);
+
     }
 
     public void PopEnemyFromList(Enemy enemy)
     {
+        Destroy(speechBubbles[enemies.IndexOf(enemy)],0.1f);
+        speechBubbles.RemoveAt(enemies.IndexOf(enemy));
+
+
         enemies.Remove(enemy);
     }
 }

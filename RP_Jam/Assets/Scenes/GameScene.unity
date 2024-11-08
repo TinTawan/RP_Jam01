@@ -511,6 +511,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1505818611}
+  ui: {fileID: 1670539984}
 --- !u!61 &300649592
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2313,6 +2314,7 @@ MonoBehaviour:
   dropPos: {x: 4.6, y: -2.4}
   stompTime: 0.2
   ideologyLevel: 0
+  ui: {fileID: 1670539984}
 --- !u!61 &1505818612
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2728,6 +2730,8 @@ MonoBehaviour:
   arrowPointAngle: 0
   scrollPanelParent: {fileID: 300587432}
   speechBubblePrefab: {fileID: 5228520749107045621, guid: cff82f7fd27775e4eabdbfadf1a80d6c, type: 3}
+  enemies: []
+  speechBubbles: []
 --- !u!1 &1672143476
 GameObject:
   m_ObjectHideFlags: 0
@@ -3277,6 +3281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 8818715329994199893, guid: 8143bae7d9effc64c8df6b5cc6a9830f, type: 3}
+  ui: {fileID: 1670539984}
   spawnIntervalMin: 0.7
   spawnIntervalMax: 1.8
 --- !u!4 &2067870170
