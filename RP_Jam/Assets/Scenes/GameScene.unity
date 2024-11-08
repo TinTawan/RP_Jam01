@@ -656,6 +656,8 @@ GameObject:
   m_Component:
   - component: {fileID: 326409642}
   - component: {fileID: 326409643}
+  - component: {fileID: 326409645}
+  - component: {fileID: 326409644}
   m_Layer: 0
   m_Name: layer2_buildings
   m_TagString: Untagged
@@ -730,6 +732,48 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &326409644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 326409641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f76d2e4d44d15c4cb6b87cd9c4cc6af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1505818611}
+  ui: {fileID: 1670539984}
+  skySr: {fileID: 1687777611}
+  colours:
+  - {r: 0.654902, g: 0.8196079, b: 0.8196079, a: 1}
+  - {r: 0.43596473, g: 0.9150943, b: 0.9150943, a: 1}
+  - {r: 0, g: 0.94190407, b: 1, a: 1}
+  - {r: 0.9056604, g: 0.43147027, b: 0.49353608, a: 1}
+  - {r: 0.9622642, g: 0.13163051, b: 0.24146661, a: 1}
+--- !u!95 &326409645
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 326409641}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8436f9eea69579043b983060c8e40e8a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &404101338
 GameObject:
   m_ObjectHideFlags: 0
