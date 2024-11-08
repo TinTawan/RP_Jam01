@@ -21,10 +21,14 @@ public class Enemy : MonoBehaviour
 
     string stringToSay;
 
+    AudioSource audioSource;
+    [SerializeField] AudioClip good, bad;
+
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
         moveTarget = GameObject.FindGameObjectWithTag("EnemyTarget").transform;
+        audioSource = GetComponent<AudioSource>();
 
         UI_Manager ui = GameObject.FindObjectOfType<UI_Manager>();
 
@@ -68,6 +72,17 @@ public class Enemy : MonoBehaviour
 
     public void ReachedTarget()
     {
+        if(isGood)
+        {
+            audioSource.clip = good;
+            audioSource.Play();
+        }
+        else
+        {
+            audioSource.clip = bad;
+            audioSource.Play();
+        }
+
         Destroy(gameObject, 0.1f);
     }
 
@@ -81,20 +96,6 @@ public class Enemy : MonoBehaviour
         return ideologyVal;
     }
 
-    /*void SetSentence(bool isGood)
-    {
-        int rand = Random.Range(0, goodSentences.Count);
-        if(isGood )
-        {
-            stringToSay = goodSentences[rand];
-        }
-        else
-        {
-            stringToSay = badSentences[rand];
-        }
-
-        //Debug.Log(stringToSay);
-    }*/
 
     public string GetSentence()
     {
