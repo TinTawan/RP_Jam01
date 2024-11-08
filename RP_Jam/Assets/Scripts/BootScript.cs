@@ -21,6 +21,10 @@ public class BootScript : MonoBehaviour
     [Header("Player Info")]
     [SerializeField] float ideologyLevel = 0;
 
+
+    [Header("UI")]
+    [SerializeField] UI_Manager ui;
+
     private void Start()
     {
         bootCol = GetComponent<BoxCollider2D>();
@@ -101,6 +105,8 @@ public class BootScript : MonoBehaviour
             enemy.Stomped();
 
             Debug.Log(ideologyLevel);
+
+            ui.PopEnemyFromList(enemy);
         }
 
     }

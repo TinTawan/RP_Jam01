@@ -25,20 +25,30 @@ public class Enemy : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         moveTarget = GameObject.FindGameObjectWithTag("EnemyTarget").transform;
 
-        if(Random.Range(0,2) == 0)
+        UI_Manager ui = GameObject.FindObjectOfType<UI_Manager>();
+
+        if (Random.Range(0, 2) == 0)
         {
-            isGood = true;
+            //isGood = true;
             sr.sprite = goodSprite;
             ideologyVal = -10;
+
+            //stringToSay = goodSentences[Random.Range(0, goodSentences.Count)];
+
+            ui.AddEnemyToList(GetComponent<Enemy>(), goodSentences[Random.Range(0, goodSentences.Count)]);
         }
         else
         {
-            isGood = false;
+            //isGood = false;
             sr.sprite = badSprite;
             ideologyVal = 10;
+
+            //stringToSay = badSentences[Random.Range(0, badSentences.Count)];
+
+            ui.AddEnemyToList(GetComponent<Enemy>(), badSentences[Random.Range(0, badSentences.Count)]);
         }
 
-        SetSentence(isGood);
+        
 
     }
 
@@ -70,7 +80,7 @@ public class Enemy : MonoBehaviour
         return ideologyVal;
     }
 
-    void SetSentence(bool isGood)
+    /*void SetSentence(bool isGood)
     {
         int rand = Random.Range(0, goodSentences.Count);
         if(isGood )
@@ -82,6 +92,11 @@ public class Enemy : MonoBehaviour
             stringToSay = badSentences[rand];
         }
 
-        Debug.Log(stringToSay);
+        //Debug.Log(stringToSay);
+    }*/
+
+    public string GetSentence()
+    {
+        return stringToSay;
     }
 }

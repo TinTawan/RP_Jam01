@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -13,10 +14,13 @@ public class UI_Manager : MonoBehaviour
     Vector3 arrowPoint;
 
     [SerializeField] GameObject scrollPanelParent, speechBubblePrefab;
+    [SerializeField] List<Enemy> enemies = new List<Enemy>();
+
+    
 
     void Start()
     {
-        SpawnSpeechBubble("Test");
+        //SpawnSpeechBubble("Test");
     }
 
 
@@ -24,6 +28,14 @@ public class UI_Manager : MonoBehaviour
     {
         RotateArrow(player.GetIdeologyVal());
         ideologyValText.text = player.GetIdeologyVal().ToString();
+
+        //enemies.Add(GameObject.FindGameObjectWithTag("Enemy").TryGetComponent<Enemy>());
+
+        /*if (GameObject.FindGameObjectWithTag("Enemy").TryGetComponent<Enemy>(out Enemy enemy))
+        {
+            enemies.Add(enemy);
+        }*/
+        
     }
 
     void RotateArrow(float angle)
@@ -41,8 +53,29 @@ public class UI_Manager : MonoBehaviour
 
     public void SpawnSpeechBubble(string speech)
     {
-        Instantiate(speechBubblePrefab, scrollPanelParent.transform);
+        GameObject item = Instantiate(speechBubblePrefab, scrollPanelParent.transform);
+
+        TextMeshProUGUI text = item.GetComponentInChildren<TextMeshProUGUI>();
+        text.text = speech;
+        
     }
 
 
+    public void AddEnemyToList(Enemy enemy, string sentence)
+    {
+        enemies.Add(enemy);
+        //Debug.Log(sentence);
+        SpawnSpeechBubble(sentence);
+        
+    }
+
+    public void PopEnemyFromList()
+    {
+        enemies.RemoveAt(0);
+    }
+
+    public void PopEnemyFromList(Enemy enemy)
+    {
+        enemies.Remove(enemy);
+    }
 }
