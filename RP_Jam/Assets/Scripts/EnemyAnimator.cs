@@ -13,11 +13,6 @@ public class EnemyAnimator : MonoBehaviour
         enemy = GetComponent<Enemy>();
         anim = GetComponent<Animator>();
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
         if (enemy.GetGood())
         {
             anim.SetFloat("goodVal", 1);
@@ -27,4 +22,6 @@ public class EnemyAnimator : MonoBehaviour
             anim.SetFloat("goodVal", 0);
         }
     }
+
+
 }
