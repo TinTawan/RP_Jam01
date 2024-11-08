@@ -25,6 +25,10 @@ public class BootScript : MonoBehaviour
     [Header("UI")]
     [SerializeField] UI_Manager ui;
 
+    [Header("UI")]
+    [SerializeField] AudioSource squash;
+
+
     private void Start()
     {
         bootCol = GetComponent<BoxCollider2D>();
@@ -107,6 +111,8 @@ public class BootScript : MonoBehaviour
             Debug.Log(ideologyLevel);
 
             ui.PopEnemyFromList(enemy);
+
+            squash.Play();
         }
 
     }
