@@ -165,6 +165,7 @@ MonoBehaviour:
   moveTarget: {fileID: 0}
   goodSprite: {fileID: 196451152, guid: 6faa4887a7183a54b94756563eb06087, type: 3}
   badSprite: {fileID: 1370064758, guid: ca84d15b2f915d14184954215985dea8, type: 3}
+  value: 5
   goodSentences:
   - Healthcare is a human right, everyone should have access to it.
   - Public transit gives people more options to travel.

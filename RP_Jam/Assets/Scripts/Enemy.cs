@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] Sprite goodSprite, badSprite;
     SpriteRenderer sr;
 
+    [SerializeField] float value = 10;
     float ideologyVal;
 
     bool isGood;
@@ -31,7 +32,7 @@ public class Enemy : MonoBehaviour
         {
             //isGood = true;
             sr.sprite = goodSprite;
-            ideologyVal = -10;
+            ideologyVal = -value;
 
             //stringToSay = goodSentences[Random.Range(0, goodSentences.Count)];
 
@@ -41,7 +42,7 @@ public class Enemy : MonoBehaviour
         {
             //isGood = false;
             sr.sprite = badSprite;
-            ideologyVal = 10;
+            ideologyVal = value;
 
             //stringToSay = badSentences[Random.Range(0, badSentences.Count)];
 
