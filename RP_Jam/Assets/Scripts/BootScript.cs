@@ -25,8 +25,9 @@ public class BootScript : MonoBehaviour
     [Header("UI")]
     [SerializeField] UI_Manager ui;
 
-    [Header("UI")]
+    [Header("Effects")]
     [SerializeField] AudioSource squash;
+    [SerializeField] CamShake cam;
 
 
     private void Start()
@@ -43,8 +44,8 @@ public class BootScript : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space) && !isStomping && !isRising)
         {
             isStomping = true;
-
             
+
         }
 
         if(isStomping)
@@ -57,7 +58,6 @@ public class BootScript : MonoBehaviour
             Rise();
         }
 
-        //ideologyLevel = Mathf.Clamp(ideologyLevel, -100, 100);
         if(ideologyLevel <= -100)
         {
             Debug.Log("Lose");
@@ -79,6 +79,8 @@ public class BootScript : MonoBehaviour
             isRising = true;
             Rise();
             stompTimer = stompTime;
+
+            StartCoroutine(cam.Shake());
         }
 
         bootCol.enabled = true;
@@ -113,6 +115,8 @@ public class BootScript : MonoBehaviour
             ui.PopEnemyFromList(enemy);
 
             squash.Play();
+
+            
         }
 
     }
