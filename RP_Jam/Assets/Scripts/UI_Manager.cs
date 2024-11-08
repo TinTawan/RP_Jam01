@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UI_Manager : MonoBehaviour
@@ -34,6 +35,11 @@ public class UI_Manager : MonoBehaviour
 
 
         MoveBubbleArrow();
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 
     void RotateArrow(float angle)

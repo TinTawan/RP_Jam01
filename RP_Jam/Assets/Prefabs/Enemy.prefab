@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da82ff3df906f304990c8584301a62a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3.5
+  moveSpeed: 2
   moveTarget: {fileID: 0}
   goodSprite: {fileID: 196451152, guid: 6faa4887a7183a54b94756563eb06087, type: 3}
   badSprite: {fileID: 1370064758, guid: ca84d15b2f915d14184954215985dea8, type: 3}
