@@ -3,17 +3,14 @@ using UnityEngine;
 
 public class CamShake : MonoBehaviour
 {
-    [SerializeField] float shakeVal = 2f, shakeTimer = 0.2f;
-
     Vector3 startPos = new(0, 0, -10);
 
-
-    public IEnumerator Shake()
+    IEnumerator Shake(float value, float time)
     {
         float timer = 0f;
 
         //uses while loop and yield return null to run along side delta time
-        while (timer < shakeTimer)
+        while (timer < time)
         {
             timer += Time.deltaTime;
             /*Vector3 startPos = transform.position + offset;
@@ -24,12 +21,17 @@ public class CamShake : MonoBehaviour
             transform.position = startPos + shake3 * shakeVal;*/
 
             Vector3 pos = transform.position/* + offset*/;
-            Vector2 shake = Random.insideUnitCircle * shakeVal;
+            Vector2 shake = Random.insideUnitCircle * value;
 
             transform.position = new(shake.x, shake.y, -10);
             yield return null;
         }
 
         transform.position = startPos;
+    }
+
+    public void CallShake(float val, float time)
+    {
+        StartCoroutine(Shake(val, time));
     }
 }

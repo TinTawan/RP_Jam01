@@ -80,7 +80,7 @@ public class BootScript : MonoBehaviour
             Rise();
             stompTimer = stompTime;
 
-            StartCoroutine(cam.Shake());
+            FindObjectOfType<CamShake>().CallShake(0.2f, 0.1f);
         }
 
         bootCol.enabled = true;
