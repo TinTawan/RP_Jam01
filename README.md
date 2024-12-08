@@ -1,5 +1,5 @@
 # Democracy Manifest
-2-day Game Jam for the Rapid Prototyping module on the Games Design and Development course 
+A 2-day Game Jam for the Rapid Prototyping module while studying Games Design and Development 
 
 Team:
 
